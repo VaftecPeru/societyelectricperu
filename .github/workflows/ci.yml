@@ -31,14 +31,20 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify cPanel release
+        run: |
+          test -f dist/index.html
+          test -f dist/.htaccess
+          test -f dist/robots.txt
+          test -f dist/sitemap.xml
+
       - name: Upload deploy artifact
         uses: actions/upload-artifact@v4
         with:
           name: society-electric-dist
-          path: |
-            dist
-            package-lock.json
+          path: dist
           if-no-files-found: error
+          include-hidden-files: true
 
       - name: Dependency audit
         run: npm audit --omit=dev --audit-level=high
