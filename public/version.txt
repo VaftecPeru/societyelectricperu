@@ -1,3 +1,0 @@
-Society Electric Web
-Branch: develop
-Release candidate: 2026-09-25
