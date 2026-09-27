@@ -30,7 +30,7 @@ export const company = {
 export const images = {
   logo: '/assets/logo.svg',
   hero: 'https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  transformer: 'https://images.pexels.com/photos/35072822/pexels-photo-35072822.jpeg?auto=compress&cs=tinysrgb&w=1400',
+  transformer: 'https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/23d358bc-0f59-42c5-819c-6f3b4e872e1f/5da47548-f5a7-4437-bada-68f60431a76a/_input__Mant_n_la_misma_fotograf_a__encuadre__persona__pose_.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiM2RkMTJkMzViYTVlZjFlNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDYxMzE3M30.ZAivTc7xkZRDidPiYqGsNRbIb-1LXBV1y1RwtA_WmAw',
   panels: 'https://images.pexels.com/photos/33694019/pexels-photo-33694019.jpeg?auto=compress&cs=tinysrgb&w=1400',
   safety: 'https://images.pexels.com/photos/34526423/pexels-photo-34526423.jpeg?auto=compress&cs=tinysrgb&w=1400',
   winding: 'https://images.pexels.com/photos/31499909/pexels-photo-31499909.jpeg?auto=compress&cs=tinysrgb&w=1400',
