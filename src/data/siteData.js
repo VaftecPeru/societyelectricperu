@@ -29,13 +29,13 @@ export const company = {
 
 export const images = {
   logo: '/assets/logo.svg',
-  hero: '/assets/hero.svg',
-  transformer: '/assets/transformer.svg',
-  panels: '/assets/panels.svg',
-  safety: '/assets/safety.svg',
-  winding: '/assets/winding.svg',
-  electric: '/assets/electric.svg',
-  project: '/assets/project.svg',
+  hero: 'https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  transformer: 'https://images.pexels.com/photos/35072822/pexels-photo-35072822.jpeg?auto=compress&cs=tinysrgb&w=1400',
+  panels: 'https://images.pexels.com/photos/33694019/pexels-photo-33694019.jpeg?auto=compress&cs=tinysrgb&w=1400',
+  safety: 'https://images.pexels.com/photos/34526423/pexels-photo-34526423.jpeg?auto=compress&cs=tinysrgb&w=1400',
+  winding: 'https://images.pexels.com/photos/31499909/pexels-photo-31499909.jpeg?auto=compress&cs=tinysrgb&w=1400',
+  electric: 'https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg?auto=compress&cs=tinysrgb&w=1400',
+  project: 'https://images.pexels.com/photos/9720534/pexels-photo-9720534.jpeg?auto=compress&cs=tinysrgb&w=1400',
 }
 
 export const navItems = [

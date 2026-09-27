@@ -49,3 +49,7 @@ El repositorio incluye CI en GitHub Actions para ejecutar lint, build y auditor�
 
 ## Seguridad
 No versionar `.env`, backups SQL, archivos WordPress, credenciales, llaves o información privada. Las fotografías necesarias para el frontend están optimizadas y guardadas dentro de `public/assets`.
+
+
+## Fotografía y experiencia visual
+La rama `develop` incorpora fotografía industrial remota optimizada desde Pexels (recursos marcados como gratuitos) y una capa de animaciones CSS progresivas. Las animaciones respetan `prefers-reduced-motion` y las imágenes conservan los SVG originales del repositorio como material histórico, aunque ya no son la fuente visual principal.
