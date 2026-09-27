@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="t d">
+  <title id="t">Society Electric</title><desc id="d">Isotipo de globo, letras S E y rayo.</desc>
+  <rect width="512" height="512" rx="110" fill="#eef3f6"/>
+  <circle cx="256" cy="222" r="164" fill="#8da3b6"/>
+  <g fill="none" stroke="#eef3f6" stroke-width="19" opacity=".96">
+    <ellipse cx="256" cy="222" rx="90" ry="164"/>
+    <path d="M95 222h322M122 137c79 48 189 53 272 1M121 307c82-47 194-52 273-1"/>
+  </g>
+  <text x="119" y="272" font-family="Arial,sans-serif" font-size="145" font-weight="700" fill="#eef3f6">S</text>
+  <text x="340" y="272" font-family="Arial,sans-serif" font-size="145" font-weight="700" fill="#eef3f6">E</text>
+  <path d="M289 66 190 238h72l-68 148 139-190h-74z" fill="#dbe4df"/>
+</svg>
