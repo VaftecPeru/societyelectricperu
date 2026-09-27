@@ -10,7 +10,7 @@ export default function ContactCta() {
           <h2>¿Necesitas revisar un equipo o cotizar un servicio?</h2>
           <p>Cuéntanos el requerimiento y coordinamos una evaluación técnica.</p>
         </div>
-        <Link className="btn btn--light" to="/contacto">
+        <Link className="btn btn--yellow" to="/contacto">
           Solicitar cotización <ArrowRight size={18} />
         </Link>
       </div>

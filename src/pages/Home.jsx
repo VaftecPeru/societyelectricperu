@@ -12,6 +12,11 @@ export default function Home() {
         <div className="hero__media" style={{ backgroundImage: `url(${images.hero})` }} />
         <div className="hero__overlay" />
         <div className="hero__grid-overlay" />
+        <div className="hero__visual-label" aria-hidden="true">
+          <span>Ingeniería eléctrica</span>
+          <strong>Operación segura y continua</strong>
+          <small>Lima · Perú</small>
+        </div>
         <div className="container hero__content">
           <div className="hero__copy">
             <span className="eyebrow eyebrow--light">Ingeniería · mantenimiento · continuidad</span>
@@ -71,7 +76,11 @@ export default function Home() {
       <section className="section feature-split">
         <div className="container feature-split__grid">
           <div className="feature-split__media">
-            <img src={images.transformer} alt="Transformador atendido por Society Electric" loading="lazy" />
+            <img src={images.transformer} alt="Mantenimiento técnico de transformador eléctrico" loading="lazy" />
+            <div className="feature-split__caption" aria-hidden="true">
+              <span>Mantenimiento industrial</span>
+              <strong>Diagnóstico y continuidad operativa</strong>
+            </div>
             <div className="feature-split__badge">
               <strong>Diagnóstico</strong>
               <span>Antes de intervenir, entendemos la condición del equipo.</span>
