@@ -38,6 +38,40 @@ export const images = {
   project: 'https://images.pexels.com/photos/9720534/pexels-photo-9720534.jpeg?auto=compress&cs=tinysrgb&w=1400',
 }
 
+
+export const heroSlides = [
+  {
+    id: 'transformadores',
+    image: 'https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/01d9be6d-cc42-452a-967f-75e690c9c193/0b9acac4-c992-4252-8710-7a4d8d85dd77/Premium_photorealistic_corporate_hero_banner_for_Society_Ele.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjUxMjU2ZDI4ZGYzNGExMyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc0MDY5MH0.VrS4zs8fzHArKQwNozUAxR6F8mQ4a_Sba-EoXFT4TPg',
+    fallback: images.hero,
+    eyebrow: 'Transformadores · diagnóstico · mantenimiento',
+    title: 'Transformadores confiables para una operación que no se detiene.',
+    text: 'Mantenimiento, reparación, pruebas eléctricas y atención técnica para transformadores de distribución y potencia.',
+    cardTitle: 'Desde 2014',
+    cardText: 'Experiencia aplicada a equipos críticos y continuidad eléctrica.',
+  },
+  {
+    id: 'subestaciones',
+    image: 'https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/e684f765-9cf2-43fc-b01e-f477ab3b6242/19473c46-f12e-44e7-b0cd-fbb2657c3206/Premium_photorealistic_corporate_hero_banner_for_Society_Ele.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMTk3YzBkMDBiZTZkZGNjOCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDY5Mjk5Mn0.NMWk714M_N2AwGoMpc2NYTIXWesJQNiNkiYBD2ppLno',
+    fallback: images.safety,
+    eyebrow: 'Subestaciones · seguridad · prevención',
+    title: 'Mantenimiento de subestaciones con seguridad y continuidad.',
+    text: 'Intervenciones preventivas y correctivas para preservar la confiabilidad de la infraestructura eléctrica industrial.',
+    cardTitle: 'Prevención',
+    cardText: 'Inspección, mantenimiento planificado y control de condición.',
+  },
+  {
+    id: 'tableros',
+    image: 'https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/de224656-ee72-423a-ab8a-2a9ca9fec543/2b93bdf4-b2ae-4de0-8589-6c477eb148c7/Premium_photorealistic_corporate_hero_banner_for_Society_Ele.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzhkZjUxMWNiN2FjNDJjNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDY4NDE4OH0.MZGaiupzs14KwxAS_txKXhGP-oAy9FD4FxKIo_WNBqM',
+    fallback: images.panels,
+    eyebrow: 'Tableros · control · automatización',
+    title: 'Control y distribución eléctrica con precisión industrial.',
+    text: 'Diseño, fabricación e implementación de tableros eléctricos para control, protección, automatización y distribución.',
+    cardTitle: 'Control técnico',
+    cardText: 'Soluciones ordenadas para distribución, protección y automatización.',
+  },
+]
+
 export const navItems = [
   { label: 'Inicio', to: '/' },
   { label: 'Nosotros', to: '/nosotros' },
