@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Mail, MapPin, Menu, Phone, X } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin, Menu, MessageCircle, Phone, X } from 'lucide-react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { company, images, navItems } from '../data/siteData'
 
@@ -98,7 +98,10 @@ export default function Layout() {
         rel="noreferrer"
         aria-label="Contactar por WhatsApp"
       >
-        WA
+        <span className="whatsapp__mark" aria-hidden="true">
+          <MessageCircle className="whatsapp__bubble" size={34} strokeWidth={2.15} />
+          <Phone className="whatsapp__phone" size={14} strokeWidth={2.7} />
+        </span>
       </a>
 
       <footer className="footer">
