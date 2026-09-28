@@ -136,7 +136,15 @@ export default function Layout() {
         </div>
         <div className="container footer__bottom">
           <span>© {new Date().getFullYear()} Society Electric. Todos los derechos reservados.</span>
-          <span>Web corporativa · ReactJS</span>
+          <a
+            className="footer__credit"
+            href="https://www.vaftec.com.pe/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Desarrollo por Vaftec - abrir sitio web"
+          >
+            Desarrollo por - <strong>Vaftec</strong>
+          </a>
         </div>
       </footer>
     </div>
