@@ -1116,3 +1116,25 @@ body { overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .hero-slider__direction svg { animation: none !important; }
 }
+
+
+/* Crédito de desarrollo */
+.footer__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #8fa4b3;
+  font-size: 11px;
+  transition: color .2s ease, transform .2s ease;
+}
+.footer__credit strong {
+  color: #d7e5ed;
+  font-weight: 800;
+}
+.footer__credit:hover {
+  color: var(--yellow-2);
+  transform: translateY(-1px);
+}
+.footer__credit:hover strong {
+  color: var(--yellow-2);
+}
