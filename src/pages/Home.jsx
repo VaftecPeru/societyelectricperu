@@ -6,15 +6,53 @@ import SectionHeading from '../components/SectionHeading'
 import ServiceCard from '../components/ServiceCard'
 import { heroSlides, images, projects, sectors, services, values } from '../data/siteData'
 
+const sliderItems = [
+  { ...heroSlides[0], slideIndex: 0, clone: true, trackKey: 'clone-first' },
+  ...[...heroSlides].reverse().map((slide, reverseIndex) => ({
+    ...slide,
+    slideIndex: heroSlides.length - 1 - reverseIndex,
+    clone: false,
+    trackKey: `real-${slide.id}`,
+  })),
+  {
+    ...heroSlides[heroSlides.length - 1],
+    slideIndex: heroSlides.length - 1,
+    clone: true,
+    trackKey: 'clone-last',
+  },
+]
+
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
+  const [trackIndex, setTrackIndex] = useState(heroSlides.length)
+  const [transitionEnabled, setTransitionEnabled] = useState(true)
 
   const showPrevious = () => {
+    setTransitionEnabled(true)
+    setTrackIndex((current) => current + 1)
     setActiveSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)
   }
 
   const showNext = () => {
+    setTransitionEnabled(true)
+    setTrackIndex((current) => current - 1)
     setActiveSlide((current) => (current + 1) % heroSlides.length)
+  }
+
+  const goToSlide = (index) => {
+    setTransitionEnabled(true)
+    setActiveSlide(index)
+    setTrackIndex(heroSlides.length - index)
+  }
+
+  const handleTrackTransitionEnd = () => {
+    if (trackIndex === 0) {
+      setTransitionEnabled(false)
+      setTrackIndex(heroSlides.length)
+    } else if (trackIndex === heroSlides.length + 1) {
+      setTransitionEnabled(false)
+      setTrackIndex(1)
+    }
   }
 
   useEffect(() => {
@@ -22,8 +60,10 @@ export default function Home() {
     if (reduceMotion) return undefined
 
     const timer = window.setInterval(() => {
+      setTransitionEnabled(true)
+      setTrackIndex((current) => current - 1)
       setActiveSlide((current) => (current + 1) % heroSlides.length)
-    }, 6500)
+    }, 6000)
 
     return () => window.clearInterval(timer)
   }, [])
@@ -33,53 +73,62 @@ export default function Home() {
       <section className="hero hero-slider" aria-roledescription="carrusel" aria-label="Soluciones eléctricas de Society Electric">
         <div
           className="hero-slider__track"
-          style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+          onTransitionEnd={handleTrackTransitionEnd}
+          style={{
+            transform: `translateX(-${trackIndex * 100}%)`,
+            transition: transitionEnabled ? undefined : 'none',
+          }}
         >
-          {heroSlides.map((slide, index) => (
-            <article
-              className="hero-slide"
-              key={slide.id}
-              aria-hidden={activeSlide !== index}
-            >
-              <img
-                className="hero__media hero__media--image"
-                src={slide.image}
-                alt=""
-                aria-hidden="true"
-                onError={(event) => {
-                  if (event.currentTarget.dataset.fallbackApplied) return
-                  event.currentTarget.dataset.fallbackApplied = 'true'
-                  event.currentTarget.src = slide.fallback
-                }}
-              />
-              <div className="hero__overlay" />
-              <div className="hero__grid-overlay" />
+          {sliderItems.map((slide) => {
+            const isInteractive = !slide.clone && slide.slideIndex === activeSlide
 
-              <div className="container hero__content">
-                <div className="hero__copy">
-                  <span className="eyebrow eyebrow--light">{slide.eyebrow}</span>
-                  <h1>{slide.title}</h1>
-                  <p>{slide.text}</p>
-                  <div className="hero__actions">
-                    <Link className="btn btn--accent" to="/contacto">Solicitar cotización <ArrowRight size={18} /></Link>
-                    <Link className="btn btn--ghost" to="/servicios">Ver servicios <ChevronRight size={18} /></Link>
+            return (
+              <article
+                className="hero-slide"
+                key={slide.trackKey}
+                aria-hidden={!isInteractive}
+                inert={!isInteractive ? true : undefined}
+              >
+                <img
+                  className="hero__media hero__media--image"
+                  src={slide.image}
+                  alt=""
+                  aria-hidden="true"
+                  onError={(event) => {
+                    if (event.currentTarget.dataset.fallbackApplied) return
+                    event.currentTarget.dataset.fallbackApplied = 'true'
+                    event.currentTarget.src = slide.fallback
+                  }}
+                />
+                <div className="hero__overlay" />
+                <div className="hero__grid-overlay" />
+
+                <div className="container hero__content">
+                  <div className="hero__copy">
+                    <span className="eyebrow eyebrow--light">{slide.eyebrow}</span>
+                    <h1>{slide.title}</h1>
+                    <p>{slide.text}</p>
+                    <div className="hero__actions">
+                      <Link className="btn btn--accent" to="/contacto">Solicitar cotización <ArrowRight size={18} /></Link>
+                      <Link className="btn btn--ghost" to="/servicios">Ver servicios <ChevronRight size={18} /></Link>
+                    </div>
+                    <div className="hero__trust">
+                      <span><ShieldCheck size={18} /> Atención técnica especializada</span>
+                      <span><CheckCircle2 size={18} /> Soluciones para industria y comercio</span>
+                    </div>
                   </div>
-                  <div className="hero__trust">
-                    <span><ShieldCheck size={18} /> Atención técnica especializada</span>
-                    <span><CheckCircle2 size={18} /> Soluciones para industria y comercio</span>
-                  </div>
+
+                  <aside className="hero__card">
+                    <span>Society Electric</span>
+                    <strong>{slide.cardTitle}</strong>
+                    <p>{slide.cardText}</p>
+                    <div className="hero__card-line" />
+                    <small>Lima · Perú</small>
+                  </aside>
                 </div>
-
-                <aside className="hero__card">
-                  <span>Society Electric</span>
-                  <strong>{slide.cardTitle}</strong>
-                  <p>{slide.cardText}</p>
-                  <div className="hero__card-line" />
-                  <small>Lima · Perú</small>
-                </aside>
-              </div>
-            </article>
-          ))}
+              </article>
+            )
+          })}
         </div>
 
         <div className="hero-slider__controls" aria-label="Controles del carrusel">
@@ -92,7 +141,7 @@ export default function Home() {
                 type="button"
                 key={slide.id}
                 className={index === activeSlide ? 'is-active' : ''}
-                onClick={() => setActiveSlide(index)}
+                onClick={() => goToSlide(index)}
                 aria-label={`Mostrar banner ${index + 1}: ${slide.id}`}
                 aria-current={index === activeSlide ? 'true' : undefined}
               />
@@ -101,6 +150,11 @@ export default function Home() {
           <button type="button" onClick={showNext} aria-label="Banner siguiente">
             <ChevronRight size={22} />
           </button>
+        </div>
+
+        <div className="hero-slider__direction" aria-hidden="true">
+          <span>Deslizamiento automático</span>
+          <ArrowRight size={14} />
         </div>
       </section>
 
